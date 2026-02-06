@@ -40,6 +40,27 @@ d3.csv("../penglings.csv", d => ({
   const color = d3.scaleOrdinal()
     .domain(speciesDomain)
     .range(["#F28E2B", "#7B3C9B", "#1B9E77"]);
+  
+  svg.append("g")
+    .attr("class", "grid x-grid")
+    .attr("transform", `translate(0,${height - margin.bottom})`)
+    .call(d3.axisBottom(x)
+      .tickSize(-(height - margin.top - margin.bottom))
+      .tickFormat('')
+    );
+
+  svg.append("g")
+    .attr("class", "grid y-grid")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(y)
+      .tickSize(-(width - margin.left - margin.right))
+      .tickFormat('')
+    );
+
+  svg.selectAll('.grid line')
+    .attr('stroke', 'lightgray')
+  svg.selectAll('.grid path')
+    .attr('stroke', 'none');
 
   svg.append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`)

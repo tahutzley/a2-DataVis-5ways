@@ -2,11 +2,14 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": { "url": "https://raw.githubusercontent.com/tahutzley/a2-DataVis-5ways/refs/heads/main/penglings.csv" },
 
-  "width": 720,
-  "height": 430,
+  "width": 700,
+  "height": 420,
 
   "mark": { "type": "circle", "opacity": 0.8 },
-
+  
+  "config": {
+    "font": "Comic Sans MS"
+  },
   "encoding": {
     "x": {
       "field": "flipper_length_mm",
@@ -39,7 +42,7 @@
       "legend": {
         "title": "bill_length_mm",
         "orient": "right",
-        "values": [40, 45, 50]
+        "values": [30, 40, 50]
       },
       "scale": {
         "domain": [32, 60],
