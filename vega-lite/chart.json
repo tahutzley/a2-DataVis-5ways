@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": { "url": "penglings.csv" },
+  "data": { "url": "https://raw.githubusercontent.com/tahutzley/a2-DataVis-5ways/refs/heads/main/penglings.csv" },
 
-  "width": 700,
-  "height": 420,
+  "width": 720,
+  "height": 430,
 
   "mark": { "type": "circle", "opacity": 0.8 },
 
@@ -26,7 +26,7 @@
     "color": {
       "field": "species",
       "type": "nominal",
-      "legend": { "title": "species" },
+      "legend": { "title": "species", "orient": "right" },
       "scale": {
         "domain": ["Adelie", "Chinstrap", "Gentoo"],
         "range": ["#F28E2B", "#7B3C9B", "#1B9E77"]
@@ -38,37 +38,14 @@
       "type": "quantitative",
       "legend": {
         "title": "bill_length_mm",
-        "values": [40, 50]
+        "orient": "right",
+        "values": [40, 45, 50]
       },
       "scale": {
-        "range": [12, 201]
+        "domain": [32, 60],
+        "range": [30, 400],
+        "clamp": true
       }
-    },
-
-    "tooltip": [
-      { "field": "species", "type": "nominal" },
-      { "field": "flipper_length_mm", "type": "quantitative" },
-      { "field": "body_mass_g", "type": "quantitative" },
-      { "field": "bill_length_mm", "type": "quantitative" }
-    ]
-  },
-
-  "config": {
-    "font": "Comic Sans MS",
-    "view": { "stroke": null },
-    "axis": {
-      "labelFont": "Comic Sans MS",
-      "titleFont": "Comic Sans MS",
-      "labelFontSize": 12,
-      "titleFontSize": 13,
-      "gridOpacity": 0.2,
-      "tickSize": 6
-    },
-    "legend": {
-      "labelFont": "Comic Sans MS",
-      "titleFont": "Comic Sans MS",
-      "labelFontSize": 12,
-      "titleFontSize": 12
     }
   }
 }
